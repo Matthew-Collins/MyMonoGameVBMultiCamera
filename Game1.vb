@@ -21,10 +21,10 @@ Namespace MyMonoGame
             Me.Graphics.HardwareModeSwitch = False
             Me.Graphics.IsFullScreen = True
 
-            Me.Cameras.Add(New Camera(Me.Graphics, New Vector3(0, 0, 10), New Vector3(0, 0, 0)))
-            Me.Cameras.Add(New Camera(Me.Graphics, New Vector3(1, 0, 10), New Vector3(0, 0, 0)))
-            Me.Cameras.Add(New Camera(Me.Graphics, New Vector3(2, 0, 10), New Vector3(0, 0, 0)))
-            Me.Cameras.Add(New Camera(Me.Graphics, New Vector3(3, 0, 10), New Vector3(0, 0, 0)))
+            Me.Cameras.Add(New Camera(Me.Graphics, New Vector3(0, 0, 20), New Vector3(0, 0, 0)))
+            Me.Cameras.Add(New Camera(Me.Graphics, New Vector3(-20, 0, 0), New Vector3(0, 0, 0)))
+            Me.Cameras.Add(New Camera(Me.Graphics, New Vector3(0, 0, -20), New Vector3(0, 0, 0)))
+            Me.Cameras.Add(New Camera(Me.Graphics, New Vector3(20, 0, 0), New Vector3(0, 0, 0)))
             Me.ActiveCamera = Me.Cameras(0)
 
             Me.Content.RootDirectory = "Content"
@@ -35,11 +35,11 @@ Namespace MyMonoGame
 
         Protected Overrides Sub LoadContent()
             SpriteBatch = New SpriteBatch(GraphicsDevice)
-            Dim Model As Model = Me.Content.Load(Of Model)("robot")
-            Me.Models.Add(New Drawable(Model, New Vector3(-4.5, 0, 0), New Vector3(0, MathHelper.ToRadians(-90), 0)))
-            Me.Models.Add(New Drawable(Model, New Vector3(-1.5, 0, 0), New Vector3(0, MathHelper.ToRadians(-90), 0)))
-            Me.Models.Add(New Drawable(Model, New Vector3(1.5, 0, 0), New Vector3(0, MathHelper.ToRadians(-90), 0)))
-            Me.Models.Add(New Drawable(Model, New Vector3(4.5, 0, 0), New Vector3(0, MathHelper.ToRadians(-90), 0)))
+            Dim Model As Model = Me.Content.Load(Of Model)("anime")
+            Me.Models.Add(New Drawable(Model, New Vector3(-6, -4, -1.5), New Vector3(0, MathHelper.ToRadians(-90), 0)))
+            Me.Models.Add(New Drawable(Model, New Vector3(-1.8, -4, -2), New Vector3(0, MathHelper.ToRadians(-90), 0)))
+            Me.Models.Add(New Drawable(Model, New Vector3(1.8, -4, -1.5), New Vector3(0, MathHelper.ToRadians(-90), 0)))
+            Me.Models.Add(New Drawable(Model, New Vector3(6, -4, -2), New Vector3(0, MathHelper.ToRadians(-90), 0)))
             Me.ActiveModel = Me.Models(0)
         End Sub
 
